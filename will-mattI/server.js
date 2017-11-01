@@ -26,7 +26,7 @@ app.post('/articles', bodyParser, (request, response) => {
 
 // TODO: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
 
-app.get('/*', (req, res) => {res.send(`the thing we send back--needs input and output`);})
+app.get('/articles', (req, res) => {res.send(`new.html`);});
 
 app.listen(PORT, () => {
   // DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on

@@ -74,7 +74,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+// It is invoked in the new.html file, runs as the page loads, and is executed as the published check box is activated. When initNewArticlePage is invoked, first the user's inputs to the form are shown in the export field, and the export field is put into the new article file.  Then, it activate the ability for the user to submit the entire entry.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
@@ -87,7 +87,7 @@ articleView.initNewArticlePage = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// It is being called in the new form inputs above, where if the user inputs or changes the text areas for submission, the new article is being created simultaneously to be ready for the eventual .submit.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -112,7 +112,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// Being called after the form inputs above, where at this point the user has already inputted the information into the text fields.  This function executes on the button click of the submit button.
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -125,7 +125,7 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // It is being added as a method to the Article prototype; it's being called on the submission click.  Running the .submit method on the submit button click executes this function .insertRecord.
   article.insertRecord();
 }
 
