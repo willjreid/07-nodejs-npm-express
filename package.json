@@ -1,0 +1,27 @@
+{
+  "name": "07-nodejs-npm-express",
+  "version": "1.0.0",
+  "description": "express.js",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willjreid/07-nodejs-npm-express.git"
+  },
+  "keywords": [
+    "start"
+  ],
+  "author": "williamreid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willjreid/07-nodejs-npm-express/issues"
+  },
+  "homepage": "https://github.com/willjreid/07-nodejs-npm-express#readme"
+}
