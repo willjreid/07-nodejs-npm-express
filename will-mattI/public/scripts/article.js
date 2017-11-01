@@ -32,7 +32,7 @@ Article.fetchAll = () => {
     Article.loadAll(JSON.parse(localStorage.rawData));
     articleView.initIndexPage();
   } else {
-    $.getJSON('/data/hackerIpsum.json')
+    $.getJSON('./data/hackerIpsum.json')
       .then(rawData => {
         Article.loadAll(rawData);
         localStorage.rawData = JSON.stringify(rawData);
@@ -49,7 +49,7 @@ Article.prototype.insertRecord = function(callback) {
     .then(data => {
       console.log(data);
 
-      // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
+      // COMMENTED: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
       // The purpose of this line is to call whatever function is placed as an argument into the insertRecord function.  Both "callbacks" in this line are simply placeholders that will be replaced by whatever function you input into the insertRecord.  Yes it is indeed being invoked due to the second instance of callback in this line followed by ().
       if (callback) callback();
     })

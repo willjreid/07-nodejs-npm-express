@@ -12,21 +12,25 @@ const PORT = process.env.PORT || 3000;
 
 // DONE: Include all of the static resources as an argument to app.use().
 const app = express();
-app.use(express.static('./public', '/articles'));
+app.use(express.static('./public'));
 // COMMENTED: Why are our files in a "public" directory now? How does ExpressJS serve files?
 // Files are available in a public directory so that they can be accessed on any client.  The public folder houses the data content we will need to serve our 250+ articles. ExpressJS serves assets directly from the root directory which we have defined as public.  This keeps non-public data segregate from the user.
 
 // DONE: Refactor to use arrow function
 
-app.post('/articles', bodyParser, (request, response) => {
+app.post('/articles', bodyParser, (req, res) => {
   // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
-  console.log(request.body);
-  response.send('Record posted to server!!');
+  console.log(req.body);
+  res.send('Record posted to server!!');
 })
 
-// TODO: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
+// app.get('/*', function(req, res) {
+//   console.log('404 error')
+//   alert('This page does not exist');
+// })
+// DONE: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
 
-app.get('/articles', (req, res) => {res.send(`new.html`);});
+app.get('/new', (req, res) => {res.sendFile('new.html', {root: './public'});});
 
 app.listen(PORT, () => {
   // DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
