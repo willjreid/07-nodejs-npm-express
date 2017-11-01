@@ -1,100 +1,27 @@
-![CF](https://camo.githubusercontent.com/70edab54bba80edb7493cad3135e9606781cbb6b/687474703a2f2f692e696d6775722e636f6d2f377635415363382e706e67) Lab 07: NodeJS & NPM
-===
 
-## Submission Instructions
-Follow the submission instructions from Lab 01.
+# Project Name: node.js npm express
 
-## Resources  
-[Node JS Docs](https://nodejs.org/en/)
-
-[NPM JS Docs](https://docs.npmjs.com/)
-
-[Express JS Docs](http://expressjs.com/en/4x/api.html)
-
-## Configuration
-_Your repository must include:_
-
-```
-07-nodejs-npm-express
-├── .eslintrc.json
-├── .gitignore
-├── LICENSE
-├── README.md
-├── node_modules
-├── package-lock.json
-├── package.json
-├── public
-│   ├── data
-│   │   └── hackerIpsum.json
-│   ├── index.html
-│   ├── new.html
-│   ├── scripts
-│   │   ├── article.js
-│   │   └── articleView.js
-│   ├── styles
-│   │   ├── base.css
-│   │   ├── fonts
-│   │   │   ├── icomoon.eot
-│   │   │   ├── icomoon.svg
-│   │   │   ├── icomoon.ttf
-│   │   │   └── icomoon.woff
-│   │   ├── icons.css
-│   │   ├── layout.css
-│   │   └── modules.css
-│   └── vendor
-│       └── styles
-│           ├── default.css
-│           ├── normalize.css
-│           └── railscasts.css
-└── server.js
-```
-
-## Feature Tasks
-
-*As a user, I want to be able to create new articles and allow guests to retrieve those new articles.*
-
-- Initialize the project with `npm init`, which creates `package.json` and `package-lock.json` files. Don't forget to add `node_modules` to your `.gitignore` file!
--  Use NPM to install ExpressJS, and ensure that it's been saved as a dependency in the `package.json` file.
-
-
-*As a developer, I want to use the ExpressJS framework to set up a server file to handle HTTP requests and deliver responses.*
-
-- Instantiate the ExpressJS framework, configure the `app.use` middleware to interface with the file system, configure any needed routes, and tell the server to listen for incoming requests.
-- Run the server using `node server` and ensure that your app functions correctly. If you'd like to have your code live re-load the way that `live-server` did, install the NPM package `nodemon` and use that to run your server.
-
-### Stretch Goals
-*As a user, I want to access the form directly so I can easily add new articles.*
-
-- Create a route and callback that will serve up the new.html page via a separate URI.
-
-*As a user, I want feedback if I have made an error so that I can make sure to always access the correct URL.*
-
-- Create a ***404*** route to handle any requests other than index.html or new.html, and deliver a 404 status message to those invalid requests.
-
-## Documentation
-_Your README.md must include:_
-
-```md
-# Project Name
-
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Author**: Matt Iwicki and Will Reid
+**Version**: 1.0.7 -- the version with node.js npm express
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+Our goal with this project was to build on a mobile-first site, using jQuery to dynamically render blog posts sorted by most recent publication date and allow dynamic filtering in response to user preference for particular authors or categories.  We installed node.js and now serve more than 250 articles to the DOM using an express server call.
+
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+To build this app on your own machine, clone this repo and launch the html page in your browser.
+
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+We are using a SMACSS organization of our CSS. The index.html file reveals the basic template for each article; the hackerIpsum.json file holds all the initial text content; the article.js file constructs each article and makes the posting available to the DOM; and the articleView.js file allows the user to interact with the elements on-screen.  The server.js file allows the server to provide content.
+
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+11-01-2017 10:00am -- organized the server.js file
+11-01-2017 11:00am -- linked the new.html page with sendFile command, corrected CSS links
+11-01-2017 12:00pm -- adjusted location of server.js file to allow server connection to happen at all
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
-```
+Ron Dunphy and Scott McCoy were invaluable in troubleshooting the proper server.js location.
